@@ -1,0 +1,42 @@
+.orbiting-svg {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.orbiting-path {
+    stroke: rgba(0, 0, 0, 0.15);
+    stroke-width: 1;
+}
+
+.orbiting-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: orbit calc(var(--duration) * 1s) linear infinite;
+    animation-delay: calc(var(--delay) * 1s);
+}
+
+.orbiting-reverse {
+    animation-direction: reverse;
+}
+
+.orbiting-container>* {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg);
+    }
+}

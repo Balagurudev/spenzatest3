@@ -1,0 +1,94 @@
+.audience-section {
+    padding: var(--space-3xl) 0;
+    background-color: var(--val-white);
+    position: relative;
+}
+
+.audience-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.audience-section .section-header {
+    text-align: center;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.audience-section h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-family: var(--font-heading);
+    color: var(--val-black);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.audience-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Outer borders matching the clean grid aesthetic */
+    border: 1px solid var(--border-light);
+    background-color: var(--val-white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audience-grid-item {
+    padding: 64px 48px;
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.audience-grid-item:last-child {
+    border-right: none;
+}
+
+.audience-grid-icon {
+    color: var(--val-black);
+    margin-bottom: 32px;
+    opacity: 0.8;
+    /* Slight fade on the icon like the reference image */
+}
+
+.audience-grid-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--val-black);
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+}
+
+.audience-grid-desc {
+    font-size: 14px;
+    color: var(--text-secondary-light);
+    /* Neutral grey text */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+    .audience-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-grid-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 48px 32px;
+    }
+
+    .audience-grid-item:last-child {
+        border-bottom: none;
+    }
+}

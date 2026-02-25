@@ -1,0 +1,486 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 160px;
+    /* Account for fixed nav */
+    text-align: center;
+    overflow: hidden;
+    background: #FFF6F1;
+    color: var(--val-black);
+}
+
+.hero-bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle cloud/mountain abstraction could go here */
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.hero-section h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary-light);
+    max-width: 600px;
+}
+
+.email-capture-form {
+    display: flex;
+    gap: 8px;
+    background: var(--val-off-white);
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-top: var(--space-md);
+}
+
+.email-capture-form input {
+    border: none;
+    background: transparent;
+    padding-left: 12px;
+    min-width: 250px;
+    outline: none;
+}
+
+.social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: var(--space-lg);
+    font-size: 12px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.avatar-group {
+    display: flex;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--val-white);
+    margin-left: -10px;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+/* --- Visual Node Flow Diagram --- */
+.hero-visual-nodes {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    margin-top: var(--space-xl);
+}
+
+.node-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--val-off-white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hub-logo {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+.signal-node {
+    position: absolute;
+    background: rgba(248, 248, 248, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-secondary-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 5;
+}
+
+/* --- Floating UI Illustrations (Premium Reference Style) --- */
+.hero-visual-nodes {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    height: 500px;
+    margin-top: var(--space-xl);
+}
+
+.float-central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background: var(--val-white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    z-index: 30;
+}
+
+.float-card {
+    position: absolute;
+    background: var(--val-white);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03);
+    z-index: 25;
+    overflow: hidden;
+}
+
+/* 1. Spend Management Card */
+.float-card-spend {
+    top: 5%;
+    left: 4%;
+    width: 200px;
+    padding: 16px;
+}
+
+.spend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.spend-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary-light);
+}
+
+.spend-icon-wrap {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spend-amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--val-black);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.spend-bar {
+    height: 4px;
+    background: #F3F4F6;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.spend-bar-fill {
+    height: 100%;
+    width: 65%;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.spend-meta {
+    font-size: 10px;
+    display: flex;
+    gap: 4px;
+}
+
+.spend-up {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.spend-text {
+    color: var(--text-secondary-light);
+}
+
+/* 2. Connections Card */
+.float-card-connections {
+    top: 25%;
+    right: 5%;
+    width: 260px;
+    padding: 20px;
+}
+
+.conn-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    align-items: flex-start;
+}
+
+.conn-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.conn-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--val-black);
+}
+
+.conn-chart {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 24px;
+}
+
+.chart-bar {
+    width: 4px;
+    height: 100%;
+    background: #F3F4F6;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chart-fill {
+    width: 100%;
+    border-radius: 2px;
+}
+
+.c-orange {
+    background: var(--primary-color);
+}
+
+.c-dark {
+    background: var(--val-black);
+}
+
+.conn-amount-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.conn-amount {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.conn-decimals {
+    font-size: 14px;
+}
+
+.conn-badge {
+    font-size: 9px;
+    padding: 4px 8px;
+    background: #FFF0E6;
+    color: var(--primary-color);
+    border-radius: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* Floating Pills & Buttons */
+.float-pill {
+    position: absolute;
+    background: var(--val-white);
+    padding: 6px 14px 6px 10px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--val-black);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    z-index: 22;
+}
+
+.pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.bg-orange {
+    background: var(--primary-color);
+}
+
+.pill-plus {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-secondary-light);
+    cursor: pointer;
+}
+
+.mr-sm {
+    margin-right: 4px;
+    margin-left: -4px;
+}
+
+.pill-churn {
+    top: -5%;
+    right: 25%;
+}
+
+.pill-connect {
+    top: 18%;
+    right: 2%;
+    padding-right: 20px;
+}
+
+.pill-effective {
+    bottom: -5%;
+    left: 40%;
+}
+
+/* Scattered Floating Icons */
+.float-icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: var(--val-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    z-index: 20;
+}
+
+.float-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fi-doc {
+    top: 15%;
+    right: 32%;
+}
+
+.fi-shield {
+    top: 8%;
+    left: 35%;
+    transform: scale(0.9);
+}
+
+.fi-face-1 {
+    top: -8%;
+    left: 30%;
+}
+
+/* Float Animations */
+@keyframes bobFloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float-anim-1 {
+    animation: bobFloat 6s ease-in-out infinite;
+}
+
+.float-anim-2 {
+    animation: bobFloat 5s ease-in-out infinite 1s;
+}
+
+.float-anim-3 {
+    animation: bobFloat 7s ease-in-out infinite 0.5s;
+}
+
+.float-anim-4 {
+    animation: bobFloat 5.5s ease-in-out infinite 1.5s;
+}
+
+@media (max-width: 1024px) {
+
+    .float-card,
+    .float-pill,
+    .float-icon {
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .float-card,
+    .float-pill,
+    .float-icon,
+    .float-central-hub {
+        display: none;
+    }
+}

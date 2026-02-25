@@ -1,0 +1,30 @@
+.devices-illustration-container {
+    position: relative;
+    display: flex;
+    height: 500px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: transparent;
+}
+
+.devices-text {
+    pointer-events: none;
+    white-space: pre-wrap;
+    background: linear-gradient(to bottom, #ffffff, #666666);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: transparent;
+}
+
+.theme-dark .devices-text {
+    background: linear-gradient(to bottom, #ffffff, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+}

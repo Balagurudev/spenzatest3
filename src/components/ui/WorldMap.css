@@ -1,0 +1,30 @@
+.world-map-container {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border-radius: 8px;
+    position: relative;
+    font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.world-map-svg-bg {
+    height: 100%;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, white 10%, white 90%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, white 10%, white 90%, transparent);
+    pointer-events: none;
+    user-select: none;
+    object-fit: contain;
+}
+
+.world-map-svg-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+}

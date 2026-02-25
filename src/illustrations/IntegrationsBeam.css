@@ -1,0 +1,108 @@
+.beam-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--val-off-white);
+    border-radius: 12px;
+}
+
+.beam-svg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.beam-path {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.1);
+    stroke-width: 2;
+}
+
+.beam-gradient-path {
+    fill: none;
+    stroke: url(#beam-gradient);
+    stroke-width: 2;
+    stroke-linecap: round;
+    /* dash array makes a distinct "beam" that travels */
+    stroke-dasharray: 80 800;
+    animation: beamSweep 3s linear infinite;
+}
+
+.beam-gradient-path.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.beam-gradient-path.delay-2 {
+    animation-delay: 1.2s;
+}
+
+.beam-gradient-path.delay-3 {
+    animation-delay: 0.8s;
+}
+
+.beam-gradient-path.delay-4 {
+    animation-delay: 2.1s;
+}
+
+.beam-gradient-path.delay-5 {
+    animation-delay: 1.5s;
+}
+
+@keyframes beamSweep {
+    0% {
+        stroke-dashoffset: 800;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.beam-node {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 6px rgba(255, 255, 255, 0.6);
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.beam-node.small {
+    width: 48px;
+    height: 48px;
+}
+
+.beam-node.large {
+    width: 72px;
+    height: 72px;
+}
+
+.beam-node svg {
+    color: var(--primary-color);
+    width: 50%;
+    height: 50%;
+}
+
+.beam-node.center {
+    background: radial-gradient(circle at 35% 35%, #ff955c, var(--primary-color) 80%);
+    box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3), inset 0px -4px 10px rgba(0, 0, 0, 0.1), inset 0px 4px 10px rgba(255, 255, 255, 0.6);
+    border: none;
+}
+
+.beam-node.center img {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+    filter: grayscale(1) invert(1) brightness(100);
+    mix-blend-mode: screen;
+}

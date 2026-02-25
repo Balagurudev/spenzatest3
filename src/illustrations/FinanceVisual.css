@@ -1,0 +1,195 @@
+.finance-visual-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--val-off-white);
+    border-radius: 12px;
+}
+
+.finance-bg-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+}
+
+.finance-cards-container {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    z-index: 2;
+    transform: rotateX(10deg) rotateY(-15deg);
+    /* Slight 3D isometric tilt to match saas feel */
+    transform-style: preserve-3d;
+}
+
+.finance-card {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    width: max-content;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Positioning */
+.card-revenue {
+    top: 5%;
+    right: -5%;
+    z-index: 10;
+}
+
+.card-loyalty {
+    bottom: 5%;
+    left: -5%;
+    z-index: 5;
+}
+
+/* Float Animations */
+.float-slow {
+    animation: financeFloat 6s ease-in-out infinite;
+}
+
+.float-medium {
+    animation: financeFloat 5.5s ease-in-out infinite;
+}
+
+.delay-1 {
+    animation-delay: 1.5s;
+}
+
+@keyframes financeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Header & Badges */
+.finance-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.finance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.primary-badge {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.secondary-badge {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary-dark, #000);
+}
+
+.finance-badge-label {
+    font-size: 11px;
+    color: var(--text-secondary-dark, #666);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Body & Avatars */
+.finance-card-body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.finance-avatar {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.finance-avatar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.finance-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.finance-avatar-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.success-bg {
+    background-color: #10b981;
+    /* Green success indicator for active state */
+}
+
+/* Info Text */
+.finance-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.finance-info-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary-dark, #000);
+}
+
+.finance-info-subtitle {
+    font-size: 11px;
+    color: var(--text-secondary-dark, #666);
+}

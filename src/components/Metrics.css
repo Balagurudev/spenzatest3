@@ -1,0 +1,201 @@
+.metrics-section {
+    width: 100%;
+    padding: var(--space-3xl) 0;
+    background-color: var(--val-white);
+    font-family: var(--font-base);
+    position: relative;
+    z-index: 10;
+}
+
+.metrics-header-center {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: var(--space-3xl);
+}
+
+.metrics-header-center h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--val-black);
+    font-weight: 500;
+}
+
+.metrics-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Base Card Style */
+.metrics-card {
+    position: relative;
+    height: 380px;
+    /* Fixed height to match exact reference proportions */
+    border-radius: 8px;
+    /* Subtle premium radius */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------- */
+/* Cards 1 & 2: White Ridge Style        */
+/* ------------------------------------- */
+
+.ridge-card {
+    background-color: #ffffff;
+    border: 1px solid #eaecf0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.ridge-card-content {
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ridge-card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.ridge-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #013220;
+    /* Dark forest green / deep navy like the Ridge logo */
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+.ridge-icon {
+    /* To mimic the Ridge logo shape */
+    color: #013220;
+}
+
+.ridge-headline {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.ridge-tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ridge-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    font-family: var(--font-mono, monospace);
+    text-transform: uppercase;
+}
+
+.ridge-tag-dark {
+    background: #000;
+    color: #fff;
+}
+
+.ridge-tag-light {
+    background: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+/* ------------------------------------- */
+/* Card 3: Orange Stats Style            */
+/* ------------------------------------- */
+
+.orange-stats-card {
+    background: linear-gradient(135deg, #FFDEAD 0%, #FF8C00 50%, #FF4500 100%);
+    color: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+.orange-stats-content {
+    padding: 32px 0 0 0;
+    /* No padding bottom to allow stat boxes to run flush */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.orange-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    padding: 0 32px;
+    /* Pad left/right to match top of other cards */
+}
+
+/* Stat boxes glued to the bottom */
+.orange-bottom {
+    display: flex;
+    gap: 4px;
+    /* Small gap between the two boxes */
+    margin-top: auto;
+    /* Push to very bottom */
+}
+
+.orange-stat-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 16px 20px;
+    flex: 1;
+    /* Stretch to fill half the card width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.orange-stat-value {
+    color: #111;
+    font-size: 32px;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    margin: 0 0 12px 0;
+}
+
+.orange-stat-label {
+    color: #666;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+    .metrics-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--space-xl);
+    }
+
+    .metrics-card {
+        height: auto;
+        min-height: 340px;
+    }
+}

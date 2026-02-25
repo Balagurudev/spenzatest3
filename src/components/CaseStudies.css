@@ -1,0 +1,223 @@
+.case-studies-section {
+    padding: var(--space-3xl) 0;
+    background-color: var(--val-white);
+    /* White background to show gaps */
+}
+
+.case-studies-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.case-studies-section .section-header {
+    text-align: center;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.case-studies-section h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--val-black);
+}
+
+/* Full Bleed Grid */
+.case-studies-full-bleed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    /* No max-width, full bleed */
+    gap: 8px;
+    /* Small white gap between cards, assuming body or section is white */
+    padding: 0 8px;
+    /* Small padding on edges so it doesn't touch screen edge perfectly if wanted, or 0 if pure edge-to-edge */
+}
+
+.case-study-block {
+    position: relative;
+    height: 650px;
+    /* Tall cards like the reference */
+    background-color: #271811;
+    /* Requested dark color */
+    color: var(--val-white);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.block-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 1;
+    transform: scale(1.05);
+    /* Start slightly zoomed for the reveal effect */
+    filter: blur(12px) brightness(0.7);
+    /* Blurred by default */
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+.case-study-block:hover .block-image {
+    filter: blur(0) brightness(1);
+    /* Reveal sharp photo on hover */
+    transform: scale(1);
+}
+
+/* Remove old vibrant color themes */
+
+
+/* Inactive State (Centered Logo) - Showing on HOVER now */
+.block-inactive {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    /* Hidden by default */
+    transform: translateY(20px);
+    z-index: 4;
+    /* Overlay on top of everything when photo is clear */
+}
+
+.brand-logo-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.05em;
+}
+
+.arrow-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+/* Active State (Text & Quote with Glass Effect) - Visible by DEFAULT now */
+.block-active {
+    position: absolute;
+    inset: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: auto;
+    z-index: 3;
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+    background: rgba(39, 24, 17, 0.4);
+    /* Lower opacity as image blurs underneath */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.case-study-block:hover .block-inactive {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-study-block:hover .block-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.active-top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.quote-icon {
+    /* Style the lucide quote differently if needed, reference uses huge quotes */
+    opacity: 1;
+}
+
+.study-text {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.active-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.author-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+}
+
+.author-title {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.brand-logo-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .case-studies-full-bleed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-study-block {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-studies-full-bleed {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-block {
+        height: 400px;
+    }
+
+    .block-active {
+        padding: 24px;
+    }
+
+    .study-text {
+        font-size: 16px;
+    }
+}

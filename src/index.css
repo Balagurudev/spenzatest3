@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* --- Custom Font Definitions (Mimicking PP Neue Montreal) --- */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://framerusercontent.com/assets/6uIfYl8bnz9kOy3KOuV7PxhFPhA.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://framerusercontent.com/assets/4MKMq3fAUvPlUf3nRWmLMzBRBc.woff2");
+  font-weight: 600;
+}
+
+/* --- Global Variables --- */
+:root {
+  /* Colors - Inherited Spenza Orange as Primary */
+  --primary-color: #EA580C;
+  --primary-hover: #c2410c;
+  --primary-light: rgba(234, 88, 12, 0.1);
+
+  /* Valley Base Colors */
+  --val-black: #000000;
+  --val-white: #ffffff;
+  --val-off-white: #f8f8f8;
+  --val-gray-100: #e9e9e9;
+  --val-gray-800: #202020;
+
+  /* Semantic Themes */
+  --bg-dark: var(--val-black);
+  --text-primary-dark: var(--val-white);
+  --text-secondary-dark: rgba(255, 255, 255, 0.5);
+
+  --bg-light: var(--val-off-white);
+  --text-primary-light: var(--val-black);
+  --text-secondary-light: rgba(0, 0, 0, 0.6);
+
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-dark: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: "PP Neue Montreal", "Inter", sans-serif;
+  --font-body: "Inter", "DM Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 80px;
+  --space-3xl: 120px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Base Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--bg-dark);
+  /* Default to dark theme like the features section */
+  color: var(--text-primary-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Utility Classes --- */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.highlight-text {
+  color: var(--primary-color);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--val-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--val-white);
+  border: 1px solid var(--border-dark);
+}
+
+.btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-solid-dark {
+  background-color: var(--val-black);
+  color: var(--val-white);
+  border: 1px solid var(--border-dark);
+}
+
+.btn-solid-dark:hover {
+  background-color: #1a1a1a;
+}
+
+.btn-secondary {
+  background-color: var(--val-off-white);
+  color: var(--val-black);
+}
+
+.btn-secondary:hover {
+  background-color: var(--val-gray-100);
+}
+
+/* Pills / Badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pill-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--val-white);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.pill-light {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+}
+
+.dot-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-indicator.primary {
+  background-color: var(--primary-color);
+}
+
+.dot-indicator.white {
+  background-color: var(--val-white);
+}
+
+
+/* Layouts */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Theme Sections */
+.theme-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+.theme-light {
+  background-color: var(--bg-light);
+  color: var(--text-primary-light);
+}
+
+/* Global Input */
+.input-base {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: inherit;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input-base:focus {
+  border-color: var(--primary-color);
+}
