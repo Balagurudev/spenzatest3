@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import DottedMap from "dotted-map";
 import './WorldMap.css';

@@ -3,7 +3,6 @@ import { Cpu, Smartphone, ShoppingBag, Users, Globe as GlobeIcon, Plane, ArrowRi
 import Lottie from 'lottie-react';
 import { Button } from './ui';
 import simCardAnimation from '../illustrations/sim_card.json';
-import iotSolutionsImage from '../illustrations/IOT Solutions.png';
 import spenzaImage from '../illustrations/spenza1.jpg';
 import IntegrationsBeam from '../illustrations/IntegrationsBeam';
 import Globe from './ui/Globe';
@@ -70,12 +69,13 @@ export default function Features() {
             }
         );
 
-        itemRefs.current.forEach((ref) => {
+        const currentRefs = itemRefs.current;
+        currentRefs.forEach((ref) => {
             if (ref) observer.observe(ref);
         });
 
         return () => {
-            itemRefs.current.forEach((ref) => {
+            currentRefs.forEach((ref) => {
                 if (ref) observer.unobserve(ref);
             });
         };
